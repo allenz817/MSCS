@@ -3,6 +3,7 @@ import pandas as pd
 titanic = pd.read_csv('titanic.csv')
 
 # Create age group features
+# use cut method to create age groups by bins and labels
 titanic['Age_Group'] = pd.cut(titanic['Age'], bins=[-1, 12, 19, 35, 55, 70, float('inf')],
                              labels=['Child', 'Teenager', 'Young Adult', 'Middle-Aged', 'Older Adult', 'Elderly'])
 
